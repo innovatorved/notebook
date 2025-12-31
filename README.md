@@ -1,70 +1,92 @@
-![Logo](https://i.ibb.co/FKv7Pmr/notebook-Light.png)
+# Notebook
 
-# Prenotebook
+A modern cloud notebook application with GitHub-inspired design.
 
-Notebook is a note-taking service included as part of the free, web-based Notebook
+![React](https://img.shields.io/badge/React-19-blue) ![Vite](https://img.shields.io/badge/Vite-6-purple) ![better-auth](https://img.shields.io/badge/better--auth-1.2-green) ![Bun](https://img.shields.io/badge/Bun-compatible-orange)
 
-## Demo
+## Features
 
-http://prenotebook.ml/
-
-## Deployment
-
-To deploy this project run
-
-### Clone the Repo
-
-```bash
-    git clone git@github.com:innovatorved/PreNotebook.git
-```
-
-### Install Dependencies
-
-```bash
-    cd PreNotebook
-    npm install:all
-```
-
-### Build the Client
-
-```bash
-    npm build
-```
-
-### Start the Server
-
-```bash
-    npm start
-```
+- 🔐 **Secure Authentication** - Powered by better-auth with email/password
+- 📝 **Notes Management** - Create, edit, delete, and organize your notes
+- 🔗 **Sharing** - Share notes publicly with a link
+- 🎨 **GitHub-style UI** - Modern dark theme with Octicons
+- 📱 **Responsive** - Works on desktop and mobile
+- ⚡ **Fast** - Uses Bun for blazing-fast performance
 
 ## Tech Stack
 
-**Client:** React, react-router-dom , Bootstrap ,
+- **Frontend**: React 19, Vite 6, React Router 7
+- **Backend**: Express.js 5
+- **Database**: MongoDB (native driver)
+- **Authentication**: better-auth
+- **Icons**: GitHub Octicons
 
-**Server:** bcryptjs ,express , express-validator , jsonwebtoken ,mongoose
+## Quick Start
 
-**Database:** MongoDB
+### Prerequisites
 
-## Screenshots
+- Node.js 18+ or Bun 1.0+
+- MongoDB database (local or Atlas)
 
-![Prenotebook Dashboard](https://i.ibb.co/GsXjpy7/mainpage1.png)
+### Installation
 
-![Edit Note](https://i.ibb.co/Y3nXLh5/edit2.png)
+```bash
+# Clone the repository
+git clone https://github.com/innovatorved/notebook.git
+cd Notebook
 
-![Note](https://i.ibb.co/hHjpvnW/note3.png)
+# Install dependencies
+bun install
 
-## License
+# Create environment file
+cp .env.example .env
+# Edit .env with your MongoDB URI and secrets
+```
 
-[MIT](https://choosealicense.com/licenses/mit/)
+### Development
 
-## Authors
+```bash
+# Start API server
+bun run dev          # or: bun run bun:dev
 
-- [Ved Gupta](https://www.github.com/innovatorved)
+# In another terminal, start frontend
+bun run dev:frontend # or: bun run bun:dev:frontend
 
-## 🚀 About Me
+# Open http://localhost:5173
+```
 
-I'm a Developer i will feel the code then write .
+### Production
 
-## Support
+```bash
+# Build frontend
+bun run build        # or: bun run bun:build
 
-For support, email vedgupta@protonmail.com
+# Start production server
+bun start            # or: bun run bun:start
+
+# Open http://localhost:3000
+```
+
+## Scripts
+
+| Task | bun |
+|------|-----|
+| Dev server | `bun run bun:dev` |
+| Dev frontend | `bun run bun:dev:frontend` |
+| Build | `bun run bun:build` |
+| Production | `bun run bun:start` |
+| Export DB | `bun run bun:export-db` |
+| Migrate users | `bun run bun:migrate-users` |
+
+## Database Operations
+
+### Export Database (Backup)
+```bash
+bun run bun:export-db
+# Exports all collections to scripts/backups/
+```
+
+### Migrate Users (from old JWT system)
+```bash
+# Always backup first!
+bun run bun:export-db

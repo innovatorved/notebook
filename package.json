@@ -1,27 +1,30 @@
 {
-  "name": "prenotebook",
-  "version": "1.0.0",
+  "name": "notebook",
+  "version": "2.0.0",
   "description": "Notebook on the Cloud",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js --watch",
-    "build": "cd frontend && npm run build",
-    "install:all": "npm install && cd frontend && npm install && cd ..",
-    "fix": "prettier --write ."
+    "dev": "bun run server/index.js",
+    "dev:frontend": "bunx vite",
+    "build": "bunx vite build",
+    "preview": "bunx vite preview",
+    "start": "NODE_ENV=production bun run server/index.js",
+    "export-db": "bun run scripts/export-db.js",
+    "migrate-users": "bun run scripts/migrate-users.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-validator": "^6.12.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.6",
-    "morgan": "^1.10.0"
+    "@primer/octicons-react": "^19.13.0",
+    "bcrypt": "^6.0.0",
+    "better-auth": "^1.2.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.0.1",
+    "mongodb": "^6.12.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
-    "prettier": "^3.3.3"
+    "vite": "^6.0.7",
+    "@vitejs/plugin-react": "^4.3.4"
   }
 }
