@@ -31,3 +31,4 @@ scripts/backups/
 
 # OS files
 Thumbs.db
+.vercel

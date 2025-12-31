@@ -4,11 +4,10 @@
   "description": "Notebook on the Cloud",
   "type": "module",
   "scripts": {
-    "dev": "bun run server/index.js",
-    "dev:frontend": "bunx vite",
+    "dev": "vercel dev",
     "build": "bunx vite build",
     "preview": "bunx vite preview",
-    "start": "NODE_ENV=production bun run server/index.js",
+    "deploy": "bun run build && vercel --prod",
     "export-db": "bun run scripts/export-db.js",
     "migrate-users": "bun run scripts/migrate-users.js"
   },
@@ -17,7 +16,6 @@
     "bcrypt": "^6.0.0",
     "better-auth": "^1.2.5",
     "dotenv": "^16.4.7",
-    "express": "^5.0.1",
     "mongodb": "^6.12.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
