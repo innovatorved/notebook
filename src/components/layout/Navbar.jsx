@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="header-inner">
         {/* Logo */}
         <Link to="/" className="header-logo">
-          <BookIcon size={28} />
+          <img src="/logo.png" alt="Notebook" style={{ height: '28px', width: 'auto' }} />
           <span>Notebook</span>
         </Link>
         

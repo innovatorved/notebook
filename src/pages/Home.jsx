@@ -17,7 +17,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-icon">
-          <BookIcon size={40} />
+          <img src="/logo.png" alt="Notebook" style={{ height: '48px', width: 'auto' }} />
         </div>
         
         <h1 className="hero-title">Notebook</h1>

@@ -25,5 +25,5 @@ app.use(reactRouter)
 
 
 app.listen(port, () => {
-  console.log(`PreNotebook app listening at https://localhost:${port}/`);
+  console.log(`Notebook app listening at https://localhost:${port}/`);
 });
